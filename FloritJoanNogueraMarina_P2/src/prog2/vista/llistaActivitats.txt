@@ -1,0 +1,6 @@
+Iniciacion al Padel,Martes,9-10,20.0
+Golf para adultos,Martes,9-10,50.0
+Iniciacion al Ski,Jueves,12-14,100.0
+Golf infantil,Martes,8-10,50.0
+Submarinismo,Viernes,18-20,10.0
+Patinaje,Martes,9-15,5.0
