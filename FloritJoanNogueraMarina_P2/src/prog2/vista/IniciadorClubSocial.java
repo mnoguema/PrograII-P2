@@ -1,23 +1,26 @@
+/*
+ * Universitat de Barcelona
+ * Programació 2
+ * Curs 2022-2023
+ */
 package prog2.vista;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Marina
- */
 public class IniciadorClubSocial {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        VistaClubSocial vistaClub = new VistaClubSocial();
+        try{
+            VistaClubSocial vistaClub = new VistaClubSocial();
+            vistaClub.gestioClubSocial();          
+         }catch(ExcepcioClub ex){
+            Logger.getLogger(IniciadorClubSocial.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
         
     }
     

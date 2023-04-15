@@ -10,33 +10,50 @@ import prog2.vista.ExcepcioClub;
  *
  * @author Marina
  */
-public abstract class SociEstandard extends Soci {
+public class SociEstandard extends Soci {
+
     protected Asseguranca asseguranca;
 
-    public SociEstandard(String nom, String dni){
-        super(nom, dni, "Estandard", 25);
+    public SociEstandard(String nom, String dni, String tipus, float preu) {
+        super(nom, dni, 25);
+        asseguranca = new Asseguranca(tipus, preu);
     }
-    
+
+    public Asseguranca getAsseguranca() {
+        return asseguranca;
+    }
+
+    public void setAsseguranca(String tipus) {
+        asseguranca.setTipus(tipus);
+    }
+
     @Override
-    public void verifica() throws ExcepcioClub{
-        if(!asseguranca.getTipus().equals("Basica") && !asseguranca.getTipus().equals("Completa")){
-            throw new ExcepcioClub("El tipus d'assegurança no es correcte\n");
-        }  
+    public void verifica() throws ExcepcioClub {
+        if (!asseguranca.getTipus().toUpperCase().equals("BASICA") && !asseguranca.getTipus().toUpperCase().equals("COMPLETA")) {
+            throw new ExcepcioClub("El tipus d'assegurança pel soci amb DNI " + this.dni + " no es correcte\n");
+        }
     }
 
     @Override
     public float calcularFactura() {
         float preu = 0;
         try {
-            preu = quota + llista.calculaPreuActivitats()+asseguranca.getPreu();
+            preu = quota + llista.calculaPreuActivitats() + asseguranca.getPreu();
         } catch (ExcepcioClub ex) {
             ex.toString();
         }
-        return preu; 
+        return preu;
     }
 
     @Override
     public String tipusSoci() {
         return "Estandard";
     }
+
+    @Override
+    public String toString() {
+        return "Nom=" + getNom() + ", DNI=" + getDNI() + ". Assegurança del soci " + tipusSoci() + ": Tipus=" + asseguranca.getTipus()
+                + ", Preu Assegurança=" + asseguranca.getPreu() + "\n";
+    }
+
 }

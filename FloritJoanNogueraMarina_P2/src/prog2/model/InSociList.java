@@ -6,7 +6,6 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioClub;
-import prog2.vista.ExcepcioClub;
 
 /**
  * Interfície InSociList

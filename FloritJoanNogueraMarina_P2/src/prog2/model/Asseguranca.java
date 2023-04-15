@@ -4,23 +4,26 @@
  */
 package prog2.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marina
  */
-public class Asseguranca {
+public class Asseguranca implements Serializable {
+
     private String tipus;
     private float preu;
-    
-    public Asseguranca(float preu){
-        this.preu=preu;
+
+    public Asseguranca(float preu) {
+        this.preu = preu;
     }
-    
-    public Asseguranca(String tipus, float preu){
+
+    public Asseguranca(String tipus, float preu) {
         this.tipus = tipus;
         this.preu = preu;
     }
-    
+
     /**
      * Setter del tipus d'assegurança.
      *
@@ -56,10 +59,10 @@ public class Asseguranca {
     public void setPreu(float preu) {
         this.preu = preu;
     }
-    
+
     @Override
-    public String toString(){
-        return " Assegurança del soci estàndard: Tipus="+getTipus()+", Preu Assegurança="+getPreu()+"\n";
+    public String toString() {
+        return " Assegurança del soci estàndard: Tipus=" + getTipus() + ", Preu Assegurança=" + getPreu() + "\n";
     }
 
 }
